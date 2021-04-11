@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  db:
+    container_name: DatabasePostgreSQL
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: usernameDB
+      POSTGRES_PASSWORD: passwordDB
+    ports:
+      - "5432:5432"
+    
+  pgadmin:
+    container_name: PgAdmin4Docker
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: email@admin.com
+      PGADMIN_DEFAULT_PASSWORD: passwordAdmin
+    ports:
+      - "5050:80"
